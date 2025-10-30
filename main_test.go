@@ -8,5 +8,6 @@ func BenchmarkSomething(b *testing.B) {
 	for b.Loop() {
 		x += 1
 		y *= 2
+		b.Log("Hello")
 	}
 }

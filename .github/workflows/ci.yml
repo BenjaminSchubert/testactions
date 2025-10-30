@@ -34,10 +34,11 @@ jobs:
       - name: Generate code
         run: |
           set -eux
-          cd base
-          go generate ./...
-          cd ../head
-          go generate ./...
+
+          (cd head && go generate ./...)
+          if [ -d base ]; then
+            (cd base && go generate ./...)
+          fi
 
       - name: Create benchmarks result directory
         run: mkdir -p benchmarks/

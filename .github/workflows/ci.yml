@@ -66,15 +66,15 @@ jobs:
 
           ### Statistics
 
-          ```
+          \`\`\`
           $(cat benchmarks/stats.txt)
-          ```
+          \`\`\`
 
           ### Results
 
-          ```
+          \`\`\`
           $(cat benchmarks/head.txt)
-          ```
+          \`\`\`
           EOF
 
       - name: Compare benchmarks
@@ -88,21 +88,21 @@ jobs:
 
           ### Difference
 
-          ```
+          \`\`\`
           $(cat benchmarks/diff.txt)
-          ```
+          \`\`\`
 
           ### Head
 
-          ```
+          \`\`\`
           $(cat benchmarks/base.txt)
-          ```
+          \`\`\`
 
           ### Base
 
-          ```
+          \`\`\`
           $(cat benchmarks/head.txt)
-          ```
+          \`\`\`
           EOF
 
       - uses: actions/upload-artifact@v5

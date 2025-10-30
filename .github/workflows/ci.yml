@@ -95,14 +95,14 @@ jobs:
 
           \`\`\`
           $(cat benchmarks/head.txt | head -n 4)
-          $(cat benchmarks/head.txt | grep "^(Benchmark|ok )")
+          $(cat benchmarks/head.txt | grep "^(Benchmark\|ok )")
           \`\`\`
 
           ### Base
 
           \`\`\`
           $(cat benchmarks/base.txt | head -n 4)
-          $(cat benchmarks/base.txt | grep "^(Benchmark|ok )")
+          $(cat benchmarks/base.txt | grep "^(Benchmark\|ok )")
           \`\`\`
           EOF
 

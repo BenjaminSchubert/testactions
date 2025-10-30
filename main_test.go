@@ -6,5 +6,6 @@ func BenchmarkSomething(b *testing.B) {
 	x := 0
 	for b.Loop() {
 		x += 1
+		x += 2
 	}
 }

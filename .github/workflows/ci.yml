@@ -64,16 +64,16 @@ jobs:
           cat << EOF >> $GITHUB_STEP_SUMMARY
           ## Benchmarks
 
-          ### Summary
+          ### Statistics
 
           ```
-          $(cat benchmarks/summary.txt)
+          $(cat benchmarks/stats.txt)
           ```
 
           ### Results
 
           ```
-          $(cat benchmarks/base.txt)
+          $(cat benchmarks/head.txt)
           ```
           EOF
 

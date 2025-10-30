@@ -10,13 +10,10 @@ on:
 jobs:
   benchmark:
     runs-on: ubuntu-latest
-    if: ${{ github.base_ref }}
-    env:
-      PACKAGES: |
-        ./internal/handlers/proxy
     steps:
       - name: Checkout base
         uses: actions/checkout@v5
+        if: ${{ github.base_ref }}
         with:
           path: base/
           ref: ${{ github.base_ref }}
@@ -46,6 +43,7 @@ jobs:
         run: mkdir -p benchmarks/
 
       - name: Run benchmarks against base
+        if: ${{ github.base_ref }}
         run: go test -count=10 -benchtime 10s -bench=. -run=^$ -benchmem ./... | tee ../benchmarks/base.txt
         working-directory: base
 

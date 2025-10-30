@@ -71,7 +71,8 @@ jobs:
           ### Results
 
           \`\`\`
-          $(cat benchmarks/head.txt)
+          $(cat benchmarks/head.txt | head -n 4)
+          $(cat benchmarks/head.txt | grep "^Benchmark")
           \`\`\`
           EOF
 
@@ -93,13 +94,15 @@ jobs:
           ### Head
 
           \`\`\`
-          $(cat benchmarks/base.txt)
+          $(cat benchmarks/head.txt | head -n 4)
+          $(cat benchmarks/head.txt | grep "^Benchmark")
           \`\`\`
 
           ### Base
 
           \`\`\`
-          $(cat benchmarks/head.txt)
+          $(cat benchmarks/base.txt | head -n 4)
+          $(cat benchmarks/base.txt | grep "^Benchmark")
           \`\`\`
           EOF
 

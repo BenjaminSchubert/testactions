@@ -27,9 +27,7 @@ jobs:
         uses: actions/setup-go@v6
         with:
           go-version: stable
-          cache-dependency-path: |
-            head/go.sum
-            ${{ github.base_ref && "base/go.sum" || "" }}
+          cache-dependency-path: ${{ github.base_ref && "base/go.sum" || "head/go.sum" }}
 
       - name: Generate code
         run: |

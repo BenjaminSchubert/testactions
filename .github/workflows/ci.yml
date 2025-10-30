@@ -71,7 +71,7 @@ jobs:
           ### Results
 
           \`\`\`
-          $(cat benchmarks/head.txt)
+          $(cat benchmarks/head.txt | grep -v "^\s" | grep -v "^--- BENCH:")
           \`\`\`
           EOF
 
@@ -93,13 +93,13 @@ jobs:
           ### Head
 
           \`\`\`
-          $(cat benchmarks/base.txt)
+          $(cat benchmarks/head.txt | grep -v "^\s" | grep -v "^--- BENCH:")
           \`\`\`
 
           ### Base
 
           \`\`\`
-          $(cat benchmarks/head.txt)
+          $(cat benchmarks/base.txt | grep -v "^\s" | grep -v "^--- BENCH:")
           \`\`\`
           EOF
 

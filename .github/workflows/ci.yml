@@ -28,8 +28,8 @@ jobs:
         with:
           go-version: stable
           cache-dependency-path: |
-            base/go.sum
             head/go.sum
+            ${{ github.base_ref && "base/go.sum" }}
 
       - name: Generate code
         run: |
@@ -59,7 +59,7 @@ jobs:
         if: ${{ ! github.base_ref }}
         run: |
           set -eu
-          benchstat benchmarks/head.txt | tee ./benchmarks/stats.txt
+          benchstat head=benchmarks/head.txt | tee ./benchmarks/stats.txt
 
           cat << EOF >> $GITHUB_STEP_SUMMARY
           ## Benchmarks

@@ -99,8 +99,7 @@ jobs:
           ### Base
 
           \`\`\`
-          $(cat benchmarks/base.txt | head -n 4)
-          $(cat benchmarks/base.txt | grep "^Benchmark\|ok ")
+          $(cat benchmarks/base.txt | grep -v "^---" | grep -v "^ ")
           \`\`\`
           EOF
 
